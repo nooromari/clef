@@ -11,7 +11,7 @@ function Search() {
   const getDataFromSearch = () => {
     if (searchString) {
       apiClient
-        .get(`search?q=${searchString}/&type=track&limit=10&market=US&offset=0`)
+        .get(`search?q=${searchString}/&type=track&limit=8&market=US&offset=0`)
         .then((res) => {
           if (res.status === 200) {
             const items = res.data.tracks.items.map(
@@ -22,6 +22,7 @@ function Search() {
                   track: album.name,
                   api_track: preview_url,
                   id: album.id,
+                  spotifyPlay: album.external_urls.spotify,
                 };
               }
             );
@@ -45,7 +46,7 @@ function Search() {
     <div className="mx-5 md:mx-10 ">
       <div className="flex flex-col items-center justify-center m-3">
         <h1 className="text-3xl font-bold text-center">Music Search</h1>
-        <div className=" w-full flex justify-center gap-5 m-2">
+        <form className=" w-full flex justify-center gap-5 m-2">
           <input
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-md w-2/3 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="search"
@@ -56,13 +57,13 @@ function Search() {
             }}
           />
           <button
-            type="button"
+            type="submit"
             onClick={getDataFromSearch}
             className="bg-dark-blue text-white px-5 rounded-md"
           >
             Search
           </button>
-        </div>
+        </form>
       </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

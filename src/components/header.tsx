@@ -13,17 +13,6 @@ const Header = () => {
       </div>
       {token && (
         <nav className="flex  gap-10 ">
-          {/* <ul className="flex gap-10 align-end">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Contact</a>
-            </li>
-          </ul> */}
           <button
             className="bg-dark-blue text-white px-5 rounded-md"
             onClick={() => logOut()}

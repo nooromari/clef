@@ -4,6 +4,7 @@ interface SongCardProps {
   artist: string;
   api_track: string;
   track: string;
+  spotifyPlay: string;
   isFavorite?: boolean; 
 }
 
