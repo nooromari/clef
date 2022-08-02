@@ -42,7 +42,7 @@ function Search() {
   };
 
   return (
-    <div className=" ">
+    <div className="mx-5 md:mx-10 ">
       <div className="flex flex-col items-center justify-center m-3">
         <h1 className="text-3xl font-bold text-center">Music Search</h1>
         <div className=" w-full flex justify-center gap-5 m-2">
@@ -58,18 +58,18 @@ function Search() {
           <button
             type="button"
             onClick={getDataFromSearch}
-            className="bg-dark-blue text-white px-2 rounded-md"
+            className="bg-dark-blue text-white px-5 rounded-md"
           >
             Search
           </button>
         </div>
       </div>
       <div>
-        <div className="flex gap-6 flex-wrap items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {songs ? (
             songs.map(({ id, ...song }: any) => <SongCard key={id} {...song} />)
           ) : (
-            <div>No result, Search to listen...</div>
+            <div className="text-center">No result, Search to listen...</div>
           )}
         </div>
       </div>

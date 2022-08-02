@@ -3,6 +3,7 @@ import axios from "axios";
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = '6635439f1ae7422196b9b2633b56bed7';
 const redirectUri = 'http://localhost:3000';
+const baseURL = "https://api.spotify.com/v1/";
 const scopes = [
     // 'user-read-currently-playing',
     // 'user-read-recently-played',
@@ -25,7 +26,7 @@ export const getTokenFromUrl = () => {
 export const loginEndpoint = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
 
 const apiClient = axios.create({
-    baseURL: "https://api.spotify.com/v1/",
+    baseURL: baseURL,
   });
   
   export const setClientToken = (token) => {
@@ -36,20 +37,3 @@ const apiClient = axios.create({
   };
   
   export default apiClient;
-
-// export const getToken = () => {
-//     const urlParams = getTokenFromUrl();
-//     return urlParams.access_token;
-// }
-// export const getRefreshToken = () => {
-//     const urlParams = getTokenFromUrl();
-//     return urlParams.refresh_token;
-// }
-// export const getTokenExpiration = () => {
-//     const urlParams = getTokenFromUrl();
-//     return urlParams.expires_in;
-// }
-// export const getTokenExpirationDate = () => {
-//     const urlParams = getTokenFromUrl();
-//     return urlParams.expires_in;
-// }

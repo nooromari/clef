@@ -1,10 +1,11 @@
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import Home from "./pages/home";
-// import Home from "./pages/home";
 import Login from "./pages/login";
-// import Search from "./pages/search";
-
+import { setAuthToken } from "./store/actionCreators";
+import { setToken } from "./utils/auth";
 
 // import Favorites from "../favorites";
 // import Feed from "../feed";
@@ -14,8 +15,15 @@ import Login from "./pages/login";
 // import "./home.css";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const authToken = setToken();
+    dispatch(setAuthToken(authToken));
+  }, [dispatch]);
+
   return (
-    <div className="bg-sky-200 flex flex-col min-h-screen text-dark-blue ">
+    <div className="bg-sky-200 flex flex-col min-h-screen text-dark-blue overflow-hidden">
       <Header />
       <main>
         <Router>
