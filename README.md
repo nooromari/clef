@@ -27,6 +27,11 @@ Clef is a web entertaining application for music, Where the user can search for 
     - Redux
     - Tailwind CSS
     - PWA
+    - Heroku
+
+### API Plugin
+
+[Spotify For Developers](https://developer.spotify.com/documentation/web-api/)
 
 <!-- ## Change Log -->
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
@@ -36,4 +41,4 @@ Clef is a web entertaining application for music, Where the user can search for 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-## [Live URL](#)
+## [Live URL](https://fierce-hollows-72352.herokuapp.com/)
